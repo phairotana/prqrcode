@@ -27,7 +27,7 @@
                 <div class="text-2xl font-medium font-mono mb-4 md:mb-0">
                     <a href="/" class="hover:text-blue-400">
                         <img src="{{ mix('image/avatar.jpg') }}" alt="avatar" class="hidden md:inline rounded-full h-16 mr-4">
-                        Ryuta Hamasaki
+                        PHAI ROTANA
                     </a>
                 </div>
             </nav>
@@ -49,7 +49,7 @@
             </p>
         </div>
         <footer class="flex flex-col items-center justify-between text-gray-500 px-4 py-4 border-t border-gray-300 md:flex-row md:px-32">
-            <div class="mb-4 md:mb-0">&copy; Ryuta Hamasaki</div>
+            <div class="mb-4 md:mb-0">&copy; PHAI ROTANA</div>
         </footer>
     </body>
 </html>
