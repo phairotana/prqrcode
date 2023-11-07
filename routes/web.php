@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\QRCodeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,11 +13,6 @@ use App\Http\Controllers\QRCodeController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-Route::get('/', [QRCodeController::class, 'index']);
-Route::get('/page/{page}', [QRCodeController::class, 'index']);
-Route::get('/posts/{slug}', [QRCodeController::class, 'show']);
-
+Route::get('/', function () {
+    return view('welcome');
+});
