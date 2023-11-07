@@ -7,11 +7,6 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
 
     <style>
-        .qr-code {
-            max-width: 200px;
-            margin: 10px;
-        }
-
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;900&display=swap');
 
         input {
@@ -34,7 +29,7 @@
 
         .container {
             position: relative;
-            width: 350px;
+            width: 400px;
             height: 500px;
             border-radius: 20px;
             padding: 40px;
@@ -44,21 +39,12 @@
         }
 
         .brand-logo {
-            height: 100px;
-            width: 100px;
-            background: url("https://img.icons8.com/color/100/000000/twitter--v2.png");
+            height: 200px;
+            width: 200px;
             margin: auto;
-            border-radius: 50%;
+            border-radius: 10px;
             box-sizing: border-box;
             box-shadow: 7px 7px 10px #cbced1, -7px -7px 10px white;
-        }
-
-        .brand-title {
-            margin-top: 10px;
-            font-weight: 900;
-            font-size: 1.8rem;
-            color: #1DA1F2;
-            letter-spacing: 1px;
         }
 
         .inputs {
@@ -102,7 +88,7 @@
         button {
             color: white;
             margin-top: 20px;
-            background: #1DA1F2;
+            background: #286090;
             height: 40px;
             border-radius: 20px;
             cursor: pointer;
@@ -115,15 +101,24 @@
             box-shadow: none;
         }
 
-        a {
+        .powerby {
             position: absolute;
-            font-size: 8px;
-            bottom: 4px;
-            right: 4px;
+            font-size: 12px;
+            bottom: 10px;
+            right: 10px;
             text-decoration: none;
+            color: #286090;
+            border-radius: 4px;
+            padding: 2px;
+        }
+
+        .note {
+            position: absolute;
+            font-size: 12px;
+            bottom: 0px;
+            left: : 10px;
             color: black;
-            background: yellow;
-            border-radius: 10px;
+            border-radius: 4px;
             padding: 2px;
         }
 
@@ -140,65 +135,27 @@
 </head>
 
 <body>
-    <div class="container-fluid">
-        <div class="text-center">
-
-            <!-- Get a Placeholder image initially,
-	this will change according to the
-	data entered later -->
-            <img src="https://chart.googleapis.com/chart?cht=qr&chl=Hello+World&chs=160x160&chld=L|0"
-                class="qr-code img-thumbnail img-responsive" />
-        </div>
-
-        <div class="form-horizontal">
-            <div class="form-group">
-                <label class="control-label col-sm-2" for="content">
-                    Content:
-                </label>
-                <div class="col-sm-10">
-
-                    <!-- Input box to enter the 
-			required data -->
-                    <input type="text" size="60" maxlength="60" class="form-control" id="content"
-                        placeholder="Enter content" />
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-
-                    <!-- Button to generate QR Code for
-		the entered data -->
-                    <button type="button" class="btn btn-default" id="generate">
-                        Generate
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
     <div class="container">
-        <div class="brand-logo"></div>
-        <div class="brand-title">TWITTER</div>
+        <a class="download-qr" target="_blank"
+            href="https://chart.googleapis.com/chart?cht=qr&chl=No+Maps+Link&chs=200x200&chld=L|0" download>
+            <div class="text-center">
+                <img src="https://chart.googleapis.com/chart?cht=qr&chl=No+Maps+Link&chs=200x200&chld=L|0"
+                    class="qr-code img-thumbnail img-responsive brand-logo" />
+            </div>
+        </a>
+
         <div class="inputs">
-            <label>EMAIL</label>
-            <input type="email" placeholder="example@test.com" />
-            <label>PASSWORD</label>
-            <input type="password" placeholder="Min 6 charaters long" />
-            <button type="submit">LOGIN</button>
+            <input type="text" id="content" placeholder="Enter google maps link" />
+            <button type="button" id="generate"> Generate</button>
         </div>
-        <a href="https://twitter.com/prathkum">MADE BY PRATHAM</a>
+        <p class="note">Note: To Save QR, Click on its area.</p>
+        <a class="powerby" href="https://www.facebook.com/blackice.kh24" target="_blank">Power By: Rotana</a>
     </div>
 
 
-    <script src="https://code.jquery.com/jquery-3.5.1.js">
-    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 
     <script>
-        // Function to HTML encode the text
-        // This creates a new hidden element,
-        // inserts the given text into it 
-        // and outputs it out as HTML
         function htmlEncode(value) {
             return $('<div/>').text(value)
                 .html();
@@ -216,11 +173,12 @@
                 let finalURL =
                     'https://chart.googleapis.com/chart?cht=qr&chl=' +
                     htmlEncode($('#content').val()) +
-                    '&chs=160x160&chld=L|0'
+                    '&chs=200x200&chld=L|0'
 
                 // Replace the src of the image with
                 // the QR code image
                 $('.qr-code').attr('src', finalURL);
+                $('.download-qr').attr('href', finalURL);
             });
         });
     </script>
