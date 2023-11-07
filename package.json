@@ -1,14 +1,23 @@
 {
     "private": true,
     "scripts": {
-        "dev": "vite",
-        "build": "vite build"
+        "dev": "npm run development",
+        "development": "mix",
+        "watch": "mix watch",
+        "watch-poll": "mix watch -- --watch-options-poll=1000",
+        "hot": "mix watch --hot",
+        "prod": "npm run production",
+        "production": "mix --production",
+        "deploy": "netlify deploy --prod"
     },
     "devDependencies": {
-        "axios": "^1.1.2",
-        "laravel-vite-plugin": "^0.7.2",
+        "@tailwindcss/typography": "^0.4.1",
+        "autoprefixer": "^10.3.1",
+        "axios": "^0.21",
+        "laravel-mix": "^6.0.6",
         "lodash": "^4.17.19",
-        "postcss": "^8.1.14",
-        "vite": "^4.0.0"
+        "netlify-cli": "^5.2.3",
+        "postcss": "^8.3.6",
+        "tailwindcss": "^2.2.7"
     }
 }
