@@ -19,7 +19,9 @@
         }
 
         body {
-            margin: 0
+            margin: 0,
+                font-family: 'Nunito', sans-serif;
+
         }
 
         a {
@@ -380,12 +382,6 @@
                 --tw-text-opacity: 1;
                 color: rgb(107 114 128 / var(--tw-text-opacity))
             }
-        }
-    </style>
-
-    <style>
-        body {
-            font-family: 'Nunito', sans-serif;
         }
     </style>
 </head>
